@@ -22,21 +22,19 @@ function addFloatingButterfly() {
     const butterfly = document.createElement("div");
     butterfly.className = "floating";
     butterfly.style.left = randomX() + "%";
-
     butterfly.textContent = "🦋";
-
     garden.appendChild(butterfly);
 
-    // Rainbow trail
-    for (let i = 0; i < 4; i++) {
+    const colors = ["❤️","🧡","💛","💚","💙","💜"];
+    colors.forEach((c, i) => {
         const trail = document.createElement("div");
         trail.className = "floating";
         trail.style.left = (randomX() + i) + "%";
         trail.style.animationDuration = (5 + i) + "s";
-        trail.textContent = ["❤️","🧡","💛","💚","💙","💜"][i];
+        trail.textContent = c;
         garden.appendChild(trail);
         setTimeout(() => trail.remove(), 7000);
-    }
+    });
 
     setTimeout(() => butterfly.remove(), 7000);
 }
@@ -65,12 +63,43 @@ function addPet() {
     pet.textContent = pets[Math.floor(Math.random() * pets.length)];
 
     garden.appendChild(pet);
-
     setTimeout(() => pet.remove(), 10000);
 }
 
-/* Popup Message */
-function showMessage() {
-    alert("Mom, we love you and hope you have the BEST day! Happy Mother's Day 💖");
-}
+/* Wish spark anywhere you click */
+document.addEventListener("click", function(e) {
+    const wish = document.createElement("div");
+    wish.className = "wish";
+    wish.style.left = e.clientX + "px";
+    wish.style.top = e.clientY + "px";
+    wish.textContent = "🌟";
+    document.body.appendChild(wish);
+    setTimeout(() => wish.remove(), 2000);
+});
 
+/* Letter + sunflower confetti */
+let letterOpen = false;
+
+function toggleLetter() {
+    const letter = document.getElementById("letter");
+
+    if (!letterOpen) {
+        letter.style.display = "block";
+        letter.innerHTML = "Mom, your love is the softest place to land. Happy Mother's Day 💖";
+
+        for (let i = 0; i < 12; i++) {
+            const confetti = document.createElement("div");
+            confetti.className = "sunflower";
+            confetti.textContent = "🌻";
+            confetti.style.left = (Math.random() * 90 + 5) + "%";
+            confetti.style.top = "0px";
+            document.body.appendChild(confetti);
+            setTimeout(() => confetti.remove(), 2000);
+        }
+
+        letterOpen = true;
+    } else {
+        letter.style.display = "none";
+        letterOpen = false;
+    }
+}
