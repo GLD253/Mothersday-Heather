@@ -4,33 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Mother's Day!</title>
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
     <h1>🌸🌼 Happy Mother's Day, Mom 🌼🌸</h1>
     <p class="subtitle">We love you so much! We hope you have the best day ever, #1 MOM! We made this song just for you! Love from Logan & Gloria</p>
 
-    <!-- Highlighted music player -->
     <div class="music-box">
-        <audio id="song" src="Heather in Bloom.mp3" controls></audio>
+        <audio id="song" src="moms-song.mp3" controls></audio>
     </div>
 
     <div class="button-row">
-        <button onclick="addFloatingFlower()">🌸 Flowers for you</button>
-        <button onclick="addFloatingButterfly()">🦋 We LOVE YOU SO MUCH!</button>
-        <button onclick="addSparkles()">✨ You're amazing!</button>
-        <button onclick="addPet()">🐾 You're the BEST!</button>
-        <button class="envelope-button" onclick="toggleLetter()">💌 A card for you</button>
+        <button onclick="addFallingFlower()">🌸 Add Falling Flower</button>
+        <button onclick="addExplodingButterfly()">🦋 Add Exploding Butterfly</button>
+        <button onclick="addBurstSparkles()">✨ Add Burst Sparkles</button>
+        <button class="envelope-button" onclick="toggleLetter()">💌 Open Letter</button>
+    </div>
+
+    <div id="garland">🌸🌼🌺💐🌸🌼🌺💐🌸🌼🌺💐</div>
+
+    <div id="garden">
+        <div id="big-cat">🐱</div>
+        <div id="big-dog">🐶</div>
     </div>
 
     <div id="letter"></div>
 
-    <div id="garden"></div>
-
-    <!-- Falling confetti container -->
     <div id="confetti-container"></div>
 
-    <script src="script.js?v=6"></script>
+    <script src="script.js?v=8"></script>
 </body>
 </html>
