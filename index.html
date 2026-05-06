@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Mother's Day!</title>
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
-    <h1>🌿 Happy Mother's Day, Mom! 🌿</h1>
-    <p class="subtitle">We love you and hope you have the BEST day! We made you this song, and are sending you hugs and kisses!</p>
+    <h1>🌸🌼 Happy Mother's Day, Mom 🌼🌸</h1>
+    <p class="subtitle">We love you so much! We hope you have the best day ever, #1 MOM! We made this song just for you! <3 Love from Logan & Gloria</p>
+
+    <!-- Highlighted music player -->
+    <div class="music-box">
+        <audio id="song" src="moms-song.mp3" controls></audio>
+    </div>
 
     <div class="button-row">
-        <button onclick="addFloatingFlower()">🌸 We</button>
-        <button onclick="addFloatingButterfly()">🦋 Love</button>
-        <button onclick="addSparkles()">✨ YOU</button>
-        <button onclick="addPet()">🐾 SO MUCH!</button>
+        <button onclick="addFloatingFlower()">🌸 Flowers for you</button>
+        <button onclick="addFloatingButterfly()">🦋 We LOVE YOU SO MUCH!</button>
+        <button onclick="addSparkles()">✨ You're amazing!</button>
+        <button onclick="addPet()">🐾 You're the BEST!</button>
         <button class="envelope-button" onclick="toggleLetter()">💌 A card for you</button>
     </div>
 
@@ -23,9 +28,9 @@
 
     <div id="garden"></div>
 
-    <!-- Your song -->
-    <audio id="song" src="moms-song.mp3" controls></audio>
+    <!-- Falling confetti container -->
+    <div id="confetti-container"></div>
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=6"></script>
 </body>
 </html>
