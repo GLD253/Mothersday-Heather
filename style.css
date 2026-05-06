@@ -18,23 +18,50 @@ h1 {
     margin-bottom: 30px;
 }
 
-.button-row button {
+/* Buttons */
+.button-row button,
+.envelope-button {
     margin: 8px;
-    padding: 12px 20px;
+    padding: 14px 24px;
     border: none;
-    background: #d8bfa3;
-    color: white;
-    border-radius: 12px;
+    background: #e8d8c3;
+    color: #5c4d3b;
+    border-radius: 14px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
     transition: 0.3s;
     font-family: inherit;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-.button-row button:hover {
-    background: #c7a98c;
+.button-row button:hover,
+.envelope-button:hover {
+    background: #d8c7b0;
 }
 
+/* Letter */
+#letter {
+    margin-top: 25px;
+    background: #fffdf8;
+    border: 2px solid #e8d8c3;
+    border-radius: 12px;
+    padding: 20px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.3rem;
+    color: #7a5f3d;
+    display: none;
+    transform-origin: top;
+    animation: unfold 0.8s ease-out forwards;
+}
+
+@keyframes unfold {
+    from { transform: scaleY(0); opacity: 0; }
+    to { transform: scaleY(1); opacity: 1; }
+}
+
+/* Garden */
 #garden {
     position: relative;
     height: 550px;
@@ -73,4 +100,50 @@ h1 {
     bottom: 0;
     font-size: 3rem;
     animation: wander 6s ease-in-out infinite;
+}
+
+/* Bees buzzing */
+@keyframes buzz {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(40px, -20px) rotate(20deg); }
+    50% { transform: translate(0, -40px) rotate(-20deg); }
+    75% { transform: translate(-40px, -20px) rotate(10deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.bee {
+    position: absolute;
+    font-size: 2rem;
+    animation: buzz 3s infinite linear;
+}
+
+/* Wish spark */
+.wish {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatUp 2s ease-out forwards;
+}
+
+/* Grass + mushrooms + picnic + candle */
+#garden::before {
+    content: "🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾 🍄🍄🍄";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 2rem;
+    width: 100%;
+    animation: sway 3s ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+    from { transform: skewX(2deg); }
+    to { transform: skewX(-2deg); }
+}
+
+#garden::after {
+    content: "🧺🥐🍓🧃   🕯️";
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 2.5rem;
 }
