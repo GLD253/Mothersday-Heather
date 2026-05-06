@@ -1,0 +1,77 @@
+body {
+    background: linear-gradient(to bottom, #ffe6f2, #fff);
+    font-family: 'Trebuchet MS', sans-serif;
+    text-align: center;
+    padding: 40px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 80%;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ff66a3;
+}
+
+.button-row button {
+    margin: 10px;
+    padding: 12px 20px;
+    border: none;
+    background: #ff99cc;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.button-row button:hover {
+    background: #ff66a3;
+}
+
+#garden {
+    margin-top: 40px;
+    min-height: 300px;
+    border: 2px dashed #ffb3d9;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Flower animation */
+.flower {
+    width: 40px;
+    position: absolute;
+    bottom: 0;
+    animation: grow 3s ease-out forwards;
+}
+
+@keyframes grow {
+    from { transform: scale(0.1) translateY(50px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Animals */
+.animal {
+    width: 60px;
+    position: absolute;
+    bottom: 0;
+    animation: pop 0.5s ease-out;
+}
+
+@keyframes pop {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+.footer {
+    margin-top: 40px;
+    color: #ff66a3;
+}
