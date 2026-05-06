@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Mother's Day!</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
-    <h1>🌿 Happy Mother's Day, Mom 🌿</h1>
-    <p class="subtitle">A soft little cottage garden made just for you.</p>
+    <h1>🌿 Happy Mother's Day, Mom! 🌿</h1>
+    <p class="subtitle">We love you and hope you have the BEST day! We made you this song, and are sending you hugs and kisses!</p>
 
     <div class="button-row">
-        <button onclick="addFloatingFlower()">Add Floating Flower 🌸</button>
-        <button onclick="addFloatingButterfly()">Add Butterfly 🦋</button>
-        <button onclick="addSparkles()">Add Sparkles ✨</button>
-        <button onclick="addPet()">Add a Wandering Pet 🐾</button>
-        <button onclick="showMessage()">Show Message 💌</button>
+        <button onclick="addFloatingFlower()">🌸 We</button>
+        <button onclick="addFloatingButterfly()">🦋 Love</button>
+        <button onclick="addSparkles()">✨ YOU</button>
+        <button onclick="addPet()">🐾 SO MUCH!</button>
+        <button class="envelope-button" onclick="toggleLetter()">💌 A card for you</button>
     </div>
+
+    <div id="letter"></div>
 
     <div id="garden"></div>
 
     <!-- Your song -->
-    <audio id="song" src="Heather in Bloom.mp3" controls></audio>
+    <audio id="song" src="moms-song.mp3" controls></audio>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>
