@@ -16,7 +16,7 @@ function addFloatingFlower() {
     setTimeout(() => flower.remove(), 7000);
 }
 
-/* Floating Butterflies with rainbow trails */
+/* Floating Butterflies */
 function addFloatingButterfly() {
     const garden = document.getElementById("garden");
     const butterfly = document.createElement("div");
@@ -63,10 +63,9 @@ function addPet() {
     pet.textContent = pets[Math.floor(Math.random() * pets.length)];
 
     garden.appendChild(pet);
-    setTimeout(() => pet.remove(), 10000);
 }
 
-/* Wish spark anywhere you click */
+/* Wish spark */
 document.addEventListener("click", function(e) {
     const wish = document.createElement("div");
     wish.className = "wish";
@@ -103,3 +102,22 @@ function toggleLetter() {
         letterOpen = false;
     }
 }
+
+/* Continuous falling confetti */
+function createConfetti() {
+    const container = document.getElementById("confetti-container");
+    const confetti = document.createElement("div");
+    confetti.className = "confetti";
+
+    const shapes = ["🌸", "🌼", "🌺", "💛"];
+    confetti.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+
+    confetti.style.left = Math.random() * 100 + "%";
+    confetti.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+    container.appendChild(confetti);
+
+    setTimeout(() => confetti.remove(), 5000);
+}
+
+setInterval(createConfetti, 500);
