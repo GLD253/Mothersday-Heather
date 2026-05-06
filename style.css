@@ -1,39 +1,76 @@
-function randomX() {
-    return Math.floor(Math.random() * 80) + 10;
+body {
+    background: linear-gradient(to bottom, #f7f2e7, #fffaf4);
+    font-family: "Georgia", serif;
+    text-align: center;
+    padding: 40px;
+    overflow-x: hidden;
+    color: #5c4d3b;
 }
 
-function growFlower() {
-    const garden = document.getElementById("garden");
-    const flower = document.createElement("img");
-    flower.src = "https://pngimg.com/uploads/flower/flower_PNG100.png";
-    flower.className = "flower";
-    flower.style.left = randomX() + "%";
-    garden.appendChild(flower);
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-function addCat() {
-    const garden = document.getElementById("garden");
-    const cat = document.createElement("img");
-    cat.src = "https://pngimg.com/uploads/cat/cat_PNG50489.png";
-    cat.className = "animal";
-    cat.style.left = randomX() + "%";
-    garden.appendChild(cat);
+.subtitle {
+    font-size: 1.2rem;
+    color: #8b6f47;
+    margin-bottom: 30px;
 }
 
-function addDog() {
-    const garden = document.getElementById("garden");
-    const dog = document.createElement("img");
-    dog.src = "https://pngimg.com/uploads/dog/dog_PNG50348.png";
-    dog.className = "animal";
-    dog.style.left = randomX() + "%";
-    garden.appendChild(dog);
+.button-row button {
+    margin: 8px;
+    padding: 12px 20px;
+    border: none;
+    background: #d8bfa3;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+    font-family: inherit;
 }
 
-function toggleMusic() {
-    const song = document.getElementById("song");
-    if (song.paused) {
-        song.play();
-    } else {
-        song.pause();
-    }
+.button-row button:hover {
+    background: #c7a98c;
+}
+
+#garden {
+    position: relative;
+    height: 550px;
+    margin-top: 40px;
+    overflow: hidden;
+}
+
+/* Floating animation */
+@keyframes floatUp {
+    from { transform: translateY(50px) scale(0.8); opacity: 0; }
+    to { transform: translateY(-650px) scale(1.2); opacity: 1; }
+}
+
+.floating {
+    position: absolute;
+    font-size: 2.5rem;
+    animation: floatUp 7s linear forwards;
+}
+
+/* Sparkles */
+.sparkle {
+    position: absolute;
+    font-size: 1.8rem;
+    animation: floatUp 4s ease-out forwards;
+}
+
+/* Pets wandering */
+@keyframes wander {
+    0% { transform: translateX(-50px); }
+    50% { transform: translateX(50px); }
+    100% { transform: translateX(-50px); }
+}
+
+.pet {
+    position: absolute;
+    bottom: 0;
+    font-size: 3rem;
+    animation: wander 6s ease-in-out infinite;
 }
