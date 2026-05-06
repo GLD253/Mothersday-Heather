@@ -2,67 +2,45 @@ function randomX() {
     return Math.floor(Math.random() * 90) + 5;
 }
 
-/* Floating Flowers */
-function addFloatingFlower() {
+/* Falling Flowers */
+function addFallingFlower() {
     const garden = document.getElementById("garden");
     const flower = document.createElement("div");
-    flower.className = "floating";
+    flower.className = "falling";
     flower.style.left = randomX() + "%";
 
     const flowers = ["🌸", "🌼", "🌺", "💐"];
     flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
 
     garden.appendChild(flower);
-    setTimeout(() => flower.remove(), 7000);
+    setTimeout(() => flower.remove(), 5000);
 }
 
-/* Floating Butterflies */
-function addFloatingButterfly() {
+/* Exploding Butterflies */
+function addExplodingButterfly() {
     const garden = document.getElementById("garden");
     const butterfly = document.createElement("div");
-    butterfly.className = "floating";
+    butterfly.className = "exploding";
     butterfly.style.left = randomX() + "%";
+    butterfly.style.top = "250px";
     butterfly.textContent = "🦋";
+
     garden.appendChild(butterfly);
-
-    const colors = ["❤️","🧡","💛","💚","💙","💜"];
-    colors.forEach((c, i) => {
-        const trail = document.createElement("div");
-        trail.className = "floating";
-        trail.style.left = (randomX() + i) + "%";
-        trail.style.animationDuration = (5 + i) + "s";
-        trail.textContent = c;
-        garden.appendChild(trail);
-        setTimeout(() => trail.remove(), 7000);
-    });
-
-    setTimeout(() => butterfly.remove(), 7000);
+    setTimeout(() => butterfly.remove(), 1200);
 }
 
-/* Sparkles */
-function addSparkles() {
+/* Burst Sparkles */
+function addBurstSparkles() {
     const garden = document.getElementById("garden");
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 6; i++) {
         const sparkle = document.createElement("div");
-        sparkle.className = "sparkle";
+        sparkle.className = "burst";
         sparkle.style.left = randomX() + "%";
+        sparkle.style.top = "250px";
         sparkle.textContent = "✨";
         garden.appendChild(sparkle);
-        setTimeout(() => sparkle.remove(), 4000);
+        setTimeout(() => sparkle.remove(), 1200);
     }
-}
-
-/* Pets */
-function addPet() {
-    const garden = document.getElementById("garden");
-    const pet = document.createElement("div");
-    pet.className = "pet";
-    pet.style.left = randomX() + "%";
-
-    const pets = ["🐱", "🐶", "🐰", "🐥"];
-    pet.textContent = pets[Math.floor(Math.random() * pets.length)];
-
-    garden.appendChild(pet);
 }
 
 /* Wish spark */
@@ -76,7 +54,7 @@ document.addEventListener("click", function(e) {
     setTimeout(() => wish.remove(), 2000);
 });
 
-/* Letter + sunflower confetti */
+/* Letter */
 let letterOpen = false;
 
 function toggleLetter() {
@@ -84,7 +62,7 @@ function toggleLetter() {
 
     if (!letterOpen) {
         letter.style.display = "block";
-        letter.innerHTML = "Happy Mother's Day to the most amazing and beautiful mom in the world!!!!! 💖";
+        letter.innerHTML = "We made this song just for you!! 💖";
 
         for (let i = 0; i < 12; i++) {
             const confetti = document.createElement("div");
