@@ -84,7 +84,7 @@ function toggleLetter() {
 
     if (!letterOpen) {
         letter.style.display = "block";
-        letter.innerHTML = "Mom, your love is the softest place to land. Happy Mother's Day 💖";
+        letter.innerHTML = "Happy Mother's Day to the most amazing and beautiful mom in the world!!!!! 💖";
 
         for (let i = 0; i < 12; i++) {
             const confetti = document.createElement("div");
