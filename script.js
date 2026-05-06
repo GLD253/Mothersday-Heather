@@ -1,39 +1,29 @@
 function randomX() {
-    return Math.floor(Math.random() * 80) + 10; // keeps items inside garden
+    return Math.floor(Math.random() * 90) + 5;
 }
 
-function growFlower() {
+function addFloatingFlower() {
     const garden = document.getElementById("garden");
-    const flower = document.createElement("img");
-    flower.src = "https://i.imgur.com/4AiXzf8.png"; // cute flower PNG
-    flower.className = "flower";
+    const flower = document.createElement("div");
+    flower.className = "floating";
     flower.style.left = randomX() + "%";
+    flower.textContent = "🌸";
     garden.appendChild(flower);
+
+    setTimeout(() => flower.remove(), 6000);
 }
 
-function addCat() {
+function addFloatingButterfly() {
     const garden = document.getElementById("garden");
-    const cat = document.createElement("img");
-    cat.src = "https://i.imgur.com/JpQ9F0K.png"; // cute cat PNG
-    cat.className = "animal";
-    cat.style.left = randomX() + "%";
-    garden.appendChild(cat);
+    const butterfly = document.createElement("div");
+    butterfly.className = "floating";
+    butterfly.style.left = randomX() + "%";
+    butterfly.textContent = "🦋";
+    garden.appendChild(butterfly);
+
+    setTimeout(() => butterfly.remove(), 6000);
 }
 
-function addDog() {
-    const garden = document.getElementById("garden");
-    const dog = document.createElement("img");
-    dog.src = "https://i.imgur.com/3ZQ3Z5w.png"; // cute dog PNG
-    dog.className = "animal";
-    dog.style.left = randomX() + "%";
-    garden.appendChild(dog);
-}
-
-function toggleMusic() {
-    const song = document.getElementById("song");
-    if (song.paused) {
-        song.play();
-    } else {
-        song.pause();
-    }
+function showMessage() {
+    alert("Mom, you make the world brighter. Happy Mother's Day! 💖");
 }
